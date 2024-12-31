@@ -1,70 +1,100 @@
-# Gulp + Shopify
+# Dawn
 
-Version: 2.0.3
+[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)
 
-## Author
+[Getting started](#getting-started) |
+[Staying up to date with Dawn changes](#staying-up-to-date-with-dawn-changes) |
+[Developer tools](#developer-tools) |
+[Contributing](#contributing) |
+[Code of conduct](#code-of-conduct) |
+[Theme Store submission](#theme-store-submission) |
+[License](#license)
 
-Jase Warner ( [https://jase.io](https://jase.io "Jase Warner’s website") )
+Dawn represents a HTML-first, JavaScript-only-as-needed approach to theme development. It's Shopify's first source available theme with performance, flexibility, and [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store) built-in and acts as a reference for building Shopify themes.
 
-> If this project has been a helping hand to you, feel free to [give this grateful developer a coffee](https://www.buymeacoffee.com/jasewarner/) ☕️
+* **Web-native in its purest form:** Themes run on the [evergreen web](https://www.w3.org/2001/tag/doc/evergreen-web/). We leverage the latest web browsers to their fullest, while maintaining support for the older ones through progressive enhancement—not polyfills.
+* **Lean, fast, and reliable:** Functionality and design defaults to “no” until it meets this requirement. Code ships on quality. Themes must be built with purpose. They shouldn’t support each and every feature in Shopify.
+* **JavaScript not required, fails gracefully:** We extract every bit of speed and functionality out of HTTP, semantic HTML, and CSS before writing our first line of JavaScript. JavaScript can only be used to progressively enhance features.
+* **Server-rendered:** HTML must be rendered by Shopify servers using Liquid. Business logic and platform primitives such as translations and money formatting don’t belong on the client. Async and on-demand rendering of parts of the page is OK, but we do it sparingly as a progressive enhancement.
+* **Functional, not pixel-perfect:** The Web doesn’t require each page to be rendered pixel-perfect by each browser engine. Using semantic markup, progressive enhancement, and clever design, we ensure that themes remain functional regardless of the browser.
 
-## Synopsis
+You can find a more detailed version of our theme code principles in the [contribution guide](https://github.com/Shopify/dawn/blob/main/.github/CONTRIBUTING.md#theme-code-principles).
 
-**Update:** 2021/09/15 – This project has been updated to support Shopify CLI and [Online Store 2.0](https://www.shopify.com/partners/blog/shopify-online-store "Online Store 2.0 article") features.
+## Getting started
+We recommend using Dawn as a starting point for theme development. [Learn more on Shopify.dev](https://shopify.dev/themes/getting-started/create). 
 
-*Gulp + Shopify* is for Developers wishing to use [Gulp.js](http://gulpjs.com/ "Gulp.js website") in combination with [Shopify CLI](https://shopify.dev/themes/tools/cli "Shopify CLI page") to develop Shopify themes &ndash; a tidy solution to the problem with Shopify not allowing sub-directories within the `assets` directory.
+> If you're building a theme for the Shopify Theme Store, then you can use Dawn as a starting point. However, the theme that you submit needs to be [substantively different from Dawn](https://shopify.dev/themes/store/requirements#uniqueness) so that it provides added value for merchants. Learn about the [ways that you can use Dawn](https://shopify.dev/themes/tools/dawn#ways-to-use-dawn).
 
-The theme is packaged with Gulp for watching and compiling assets in the `dev` directory, including SCSS, JS, images, and fonts. When modified, said assets are moved across to the `assets` directory.
+Please note that the main branch may include code for features not yet released. The "stable" version of Dawn is available in the theme store.
 
-A selection of helpful mixins is also included, most of which are featured in [this useful article](http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ "Mixins article") by [@seb_ekstrom](https://twitter.com/seb_ekstrom "@seb_ekstrom on Twitter").
+## Staying up to date with Dawn changes
 
-You may also write your JavaScript in ES6 &ndash; The Gulp scripts task uses [Babel](https://babeljs.io/ "Babel website"), so you can use the latest syntax without worrying about browser support.
+Say you're building a new theme off Dawn but you still want to be able to pull in the latest changes, you can add a remote `upstream` pointing to this Dawn repository.
 
-The theme Liquid and JSON files are all blank canvases – zero faffing, meaning you can crack on with the build right away.
+1. Navigate to your local theme folder.
+2. Verify the list of remotes and validate that you have both an `origin` and `upstream`:
+```sh
+git remote -v
+```
+3. If you don't see an `upstream`, you can add one that points to Shopify's Dawn repository:
+```sh
+git remote add upstream https://github.com/Shopify/dawn.git
+```
+4. Pull in the latest Dawn changes into your repository:
+```sh
+git fetch upstream
+git pull upstream main
+```
 
-The theme includes the Bootstrap 5 grid and reboot scss files. These can be removed in `theme.scss.liquid` and `password.scss.liquid`, or, if you so wish, you may add more Bootstrap SCSS files using @import via `./node_modules/bootstrap/scss/`.
+## Developer tools
 
-## Installation
-
-### Gulp.js
-
-Clone the repo into your project root.
-
-In Terminal `cd` into the `dev` directory and install the Gulp packages (if you haven’t already installed Gulp, you’ll need to [do so](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md "Gulp installation") first):
-
-`npm install`
-
-Once you have installed the packages, in Terminal, run `gulp` and then `gulp watch`.
-
-Any changes to the SCSS files in `dev/sass/` will be reflected in `theme.css.liquid` and/or `password.css.liquid` in `assets`.
-
-Any alterations to the JS files in `dev/js/` will be concatenated and uglified in `assets` to `theme.js`.
-
-Images added to `dev/image` will be copied across to the `assets` directory. Similarly, any fonts added to `dev/font` will be copied across to `assets`.
+There are a number of really useful tools that the Shopify Themes team uses during development. Dawn is already set up to work with these tools.
 
 ### Shopify CLI
 
-To get Shopify CLI up and running, follow the instructions [here](https://shopify.dev/themes/tools/cli/installation "Shopify CLI installation instructions").
+[Shopify CLI](https://github.com/Shopify/shopify-cli) helps you build Shopify themes faster and is used to automate and enhance your local development workflow. It comes bundled with a suite of commands for developing Shopify themes—everything from working with themes on a Shopify store (e.g. creating, publishing, deleting themes) or launching a development server for local theme development.
 
-To get started on your theme, follow [these instructions](https://shopify.dev/themes/tools/cli/getting-started "Shopify CLI usage instructions").
+You can follow this [quick start guide for theme developers](https://github.com/Shopify/shopify-cli#quick-start-guide-for-theme-developers) to get started.
 
-> Important: Unfortunately the Shopify CLI hot reload feature fires too soon for Shopify to serve any updated assets, such as CSS or JS. I’ve only been working with Shopify CLI for a couple of weeks now, so maybe I’ve missed something, but I’m finding that a manual reload (delayed by a second or two) is still required after every change.
+### Theme Check
 
-## Features
+We recommend using [Theme Check](https://github.com/shopify/theme-check) as a way to validate and lint your Shopify themes.
 
-The Gulp build features the following helpful packages:
+We've added Theme Check to Dawn's [list of VS Code extensions](/.vscode/extensions.json) so if you're using Visual Studio Code as your code editor of choice, you'll be prompted to install the [Theme Check VS Code](https://marketplace.visualstudio.com/items?itemName=Shopify.theme-check-vscode) extension upon opening VS Code after you've forked and cloned Dawn.
 
-* [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer "gulp-autoprefixer GitHub page")
-* [gulp-babel](https://github.com/babel/gulp-babel "gulp-babel GitHub page")
-* [gulp-concat](https://github.com/contra/gulp-concat "gulp-concat GitHub page")
-* [gulp-rename](https://github.com/hparra/gulp-rename "gulp-rename GitHub page")
-* [gulp-replace](https://github.com/lazd/gulp-replace "gulp-replace GitHub page")
-* [gulp-sass](https://github.com/dlmanning/gulp-sass "gulp-sass GitHub page")
-* [gulp-uglify](https://github.com/terinjokes/gulp-uglify "gulp-uglify GitHub page")
-* [gulp-scss-lint](https://github.com/juanfran/gulp-scss-lint "gulp-scss-lint GitHub page")
+You can also run it from a terminal with the following Shopify CLI command:
 
-## Credits
+```bash
+shopify theme check
+```
 
-* [Gulp.js](http://gulpjs.com/ "Gulp.js website")
-* [Shopify CLI](https://shopify.dev/themes/tools/cli "Shopify CLI page")
-* [SASS / SCSS](http://sass-lang.com/ "SASS website")
+### Continuous Integration
+
+Dawn uses [GitHub Actions](https://github.com/features/actions) to maintain the quality of the theme. [This is a starting point](https://github.com/Shopify/dawn/blob/main/.github/workflows/ci.yml) and what we suggest to use in order to ensure you're building better themes. Feel free to build off of it!
+
+#### Shopify/lighthouse-ci-action
+
+We love fast websites! Which is why we created [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action). This runs a series of [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure code that gets added doesn't degrade storefront performance over time.
+
+#### Shopify/theme-check-action
+
+Dawn runs [Theme Check](#Theme-Check) on every commit via [Shopify/theme-check-action](https://github.com/Shopify/theme-check-action).
+
+## Contributing
+
+Want to make commerce better for everyone by contributing to Dawn? We'd love your help! Please read our [contributing guide](https://github.com/Shopify/dawn/blob/main/.github/CONTRIBUTING.md) to learn about our development process, how to propose bug fixes and improvements, and how to build for Dawn.
+
+## Code of conduct
+
+All developers who wish to contribute through code or issues, please first read our [Code of Conduct](https://github.com/Shopify/dawn/blob/main/.github/CODE_OF_CONDUCT.md).
+
+## Theme Store submission
+
+The [Shopify Theme Store](https://themes.shopify.com/) is the place where Shopify merchants find the themes that they'll use to showcase and support their business. As a theme partner, you can create themes for the Shopify Theme Store and reach an international audience of an ever-growing number of entrepreneurs.
+
+Ensure that you follow the list of [theme store requirements](https://shopify.dev/themes/store/requirements) if you're interested in becoming a [Shopify Theme Partner](https://themes.shopify.com/services/themes/guidelines) and building themes for the Shopify platform.
+
+## License
+
+Copyright (c) 2021-present Shopify Inc. See [LICENSE](/LICENSE.md) for further details.
