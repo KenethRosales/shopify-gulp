@@ -1,0 +1,19 @@
+{% for metaobject in shop.metaobjects.music.values %}
+  <h2>{{ metaobject.name_of_album }}</h2>
+  <p>
+      <img src="{{ metaobject.album_image | image_url: width: 300 }}" alt="">
+  </p>
+  <p>
+     <a href="{{ metaobject.album_link.value["url"] }}" target="_blank">
+       {{ metaobject.album_link.value["text"] }} 
+     </a> 
+  </p>
+{% endfor %}
+
+
+{% schema %}
+  {
+    "name": "Music metas",
+    "settings": []
+  }
+{% endschema %}
