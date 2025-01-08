@@ -61,9 +61,20 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
-    }
+    },
+    "Music": {
+      "type": "music-index",
+      "settings": {
+      }
+    },
+    "Videos": {
+      "type": "videos-index",
+      "settings": {}
+    },
   },
   "order": [
-    "slideshow_YDEj3N"
+    "slideshow_YDEj3N",
+    "Music",
+    "Videos"
   ]
 }
