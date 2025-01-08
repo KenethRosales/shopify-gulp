@@ -14,17 +14,19 @@
   }
 {%- endstyle -%}
 
-{% for music_release in shop.metaobjects.music.values %}
-  <h2>{{ music_release.name_of_album }}</h2>
-  <p>
-      <img src="{{ music_release.album_image | image_url: width: 300 }}" alt="">
-  </p>
-  <p>
-     <a href="{{ music_release.album_link.value['url'] }}" target="_blank">
-       {{ music_release.album_link.value["text"] }} 
-     </a> 
-  </p>
-{% endfor %}
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  {% for music_release in shop.metaobjects.music.values %}
+    <h2>{{ music_release.name_of_album }}</h2>
+    <p>
+        <img src="{{ music_release.album_image | image_url: width: 300 }}" alt="">
+    </p>
+    <p>
+      <a href="{{ music_release.album_link.value['url'] }}" target="_blank">
+        {{ music_release.album_link.value["text"] }} 
+      </a> 
+    </p>
+  {% endfor %}
+</div>
 
 
 {% schema %}
