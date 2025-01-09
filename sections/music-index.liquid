@@ -19,9 +19,9 @@
 		{% if template.name == "index" %}
 			do something
 		{% endif %}
-		hello
+		
 		{% assign music_releases = shop.metaobjects.music.values %}
-		{% assign new_music_releases = music_releases | sort_natural: 'date' %}
+		{% assign new_music_releases = music_releases | sort_natural: 'title' %}
 		{% for music_release in new_music_releases %}
 			<h2>{{ music_release.name_of_album }}</h2>
 			<p>
