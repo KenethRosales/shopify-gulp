@@ -19,7 +19,10 @@
 		{% if template.name == "index" %}
 			do something
 		{% endif %}
-		{% for music_release in shop.metaobjects.music.values %}
+		hello
+		{% assign music_releases = shop.metaobjects.music.values %}
+		{% assign new_music_releases = music_releases | sort_natural: 'date' %}
+		{% for music_release in new_music_releases %}
 			<h2>{{ music_release.name_of_album }}</h2>
 			<p>
 				<img src="{{ music_release.album_image | image_url: width: 300 }}" alt="">
