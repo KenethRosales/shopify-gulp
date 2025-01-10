@@ -65,16 +65,29 @@
     "Music": {
       "type": "music-index",
       "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "Videos": {
       "type": "videos-index",
       "settings": {}
     },
+    "page_G6rt6L": {
+      "type": "page",
+      "settings": {
+        "page": "tour",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
   },
   "order": [
     "slideshow_YDEj3N",
     "Music",
-    "Videos"
+    "Videos",
+    "page_G6rt6L"
   ]
 }
