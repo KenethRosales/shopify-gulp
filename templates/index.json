@@ -139,7 +139,7 @@
     "contact_form_Rg4Lna": {
       "type": "contact-form",
       "settings": {
-        "heading": "Contact form",
+        "heading": "",
         "heading_size": "h1",
         "color_scheme": "",
         "padding_top": 36,
