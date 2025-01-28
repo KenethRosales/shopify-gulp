@@ -1,0 +1,51 @@
+#shopify-section-template--23983641329975__newsletter_Fxwnad{
+    form{
+        .field{
+            &::after, &::before{
+                display: none;
+            }
+        }
+        input{
+            border-bottom: 1px solid $black;
+
+            &:hover, &:focus{
+                border: 0;
+                border-bottom: 1px solid $black;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+#shopify-section-template--23983641329975__contact_form_Rg4Lna{
+    form{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        .contact__fields{
+            width: 100%;
+            .field{
+                &::after, &::before{
+                    display: none;
+                }
+            }
+        }
+        input{
+            border-bottom: 1px solid $black;
+
+            &:hover, &:focus{
+                border: 0;
+                border-bottom: 1px solid $black;
+                box-shadow: none !important;
+            }
+        }
+        button{
+            @include primary-button();
+            
+            &::after, &::before{
+                display: none;
+            }
+        }
+    }
+}

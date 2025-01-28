@@ -1,0 +1,8 @@
+
+Pagination
+
+{% paginate music_releases by 5 %}
+{%- if paginate.pages > 1 -%}
+    {%- render 'pagination', paginate: paginate -%}
+{%- endif -%}
+{%- endpaginate -%}

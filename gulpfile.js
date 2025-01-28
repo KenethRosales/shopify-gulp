@@ -19,30 +19,32 @@ gulp.task('styles', function () {
   ];
 
   return gulp
-    .src('./sass/*.scss')
+    .src(['./sass/*.scss',])
+    //.src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(plugins))
     //.pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS())
-    .pipe(concat('./css/styles.css'))
+    .pipe(concat('./styles.css'))
     .pipe(gulp.dest('./assets'))
     .pipe(touch()); 
 });
-/*
+
 gulp.task('scripts', function () {
   return gulp
-  .src(['./{layout,snippets,templates,assets,sections}/*.js', '!./{layout,snippets,templates,assets,sections}/*.min.js'])
+  .src(['./scripts/*.js', './scripts/*.min.js'])
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./'));
+    .pipe(concat('./scripts.js'))
+    //.pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('./assets'));
 });
-*/
+
 gulp.task('watch', function () {
-  gulp.watch(['./sass/*.scss'], gulp.series('styles'));
-  //gulp.watch(['./{layout,snippets,templates,assets,sections}/*.js', '!./{layout,snippets,templates,assets,sections}/*.min.js'], gulp.series('scripts'));
+  gulp.watch(['./sass/{components,home}/*.scss', '!./sass/*.scss'], gulp.series('styles'));
+  gulp.watch(['./scripts/*.js', './scripts/*.min.js'], gulp.series('scripts'));
 });
 
 gulp.task('default', gulp.series('watch'));

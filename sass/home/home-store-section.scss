@@ -1,0 +1,82 @@
+#shopify-section-template--23983641329975__featured_collection_wnJ3Bn{
+    max-width: 1140px;
+    margin: 0 auto;
+    .collection__title {
+        display: none;
+    }
+    .page-width-desktop{
+        padding: 0;
+
+        .slick-slider{
+            .slick-arrow{
+                top: 30%;
+                bottom: auto;
+            }
+            .slick-prev{
+                left: -5%;
+            }
+            .slick-next{
+                right: -5%;
+            }
+            .slick-list{
+                padding: 0 !important;
+
+                .slick-slide{
+                    margin: 0 10px;
+
+                    .card--standard{
+                        .card__inner{
+                            max-height: 250px;
+                            .card__media{
+                                img{
+                                    max-height: 250px;
+                                    object-fit: cover;
+                                    object-position: center;
+                                }
+                            }
+                            .card__content{
+                                max-height: 250px;
+                            }
+                        }
+                        .card__content{
+                            display: flex;
+                            flex-flow: column;
+                            justify-content: center;
+                            align-items: center;
+                            
+                            .card__information{
+                                h3{
+                                    font-family: $font__accent;
+                                    font-size: 20px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: normal;
+                                    text-align: center;
+                                }
+                                .card-information{
+                                    .price{
+                                        font-family: $font__accent;
+                                        font-size: 18px;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: normal;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                            .quick-add{
+                                font-family: $font__accent;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                                width: fit-content;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

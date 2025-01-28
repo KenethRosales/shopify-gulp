@@ -1,0 +1,10 @@
+.slideshow{
+    &__slide{
+        a{
+            opacity: 1 !important;
+        }
+    }
+    &__text{
+        background: transparent;
+    }
+}

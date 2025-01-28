@@ -1,0 +1,15 @@
+
+
+$color__accent: #000000;
+$white: #ffffff;
+$black: #000000; 
+
+
+
+
+@import 'foundation/util/_unit.scss';
+@import 'foundation/util/_breakpoint.scss';
+@import 'fonts.scss';
+@import 'components/index.scss';
+@import 'home/index.scss';
+//@import './pages/index.scss';

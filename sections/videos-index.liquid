@@ -1,28 +1,115 @@
-{% for metaobject in shop.metaobjects.videos.values %}
-  <h2>{{ metaobject.video_title }}</h2>
-  <p>
-    {% assign yt_id = metaobject.video_yt_id %}
-    
-    {% capture thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-    {% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %}  
+{{ 'section-main-page.min.css' | asset_url | stylesheet_tag }}
 
-    {% comment %}
-    {{ thumb_video }}
-    {{ video_url }}
-    {% endcomment %}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
 
-    
-    <a class="link-video" data-fancybox="video-gallery" href="{{ video_url }}">
-      <div class="overlay"></div>
-      <img class="thumb-video" src="{{ thumb_video }}" />
-    </a>
-    
-  </p>
-{% endfor %}
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+	{% if template.name == "index" %}
+		<h2 class="title-section">Videos</h2>
+		<div class="videos-list js-videos-list">
+			{% assign videos = shop.metaobjects.videos.values %}
+			{% assign new_videos = videos | sort: 'release_date_new' | reverse %}
+			{% assign i = 0 %}
+			{% for video in new_videos %}
+				{% assign i = i | plus:1 %}
+				{% if i <= 5 %}
+					{% assign yt_id = video.video_yt_id %}
+					{% assign thumb_video = video.thumbnail %}
+
+					{% comment %}
+					{{video_thumb | image_url }}
+					{% endcomment %}
+					{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
+
+					{% if thumb_video != blank %}
+						{% assign new_thumb_video = thumb_video | image_url %}
+					{% else %}
+						{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
+					{% endif %}
+					
+					<div class="single-video">
+						<div class="overlay"></div>
+						<img class="thumb-video" src="{{ new_thumb_video }}" />
+						<h2 class="title-video">{{ video.video_title }}</h2>
+						<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
+							Watch
+						</a>
+					</div>
+
+						{% comment %}
+						{{ thumb_video }}
+						{{ video_url }}
+						{% endcomment %}
+
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% else %}
+		{% assign videos = shop.metaobjects.videos.values %}
+		{% assign new_videos = videos | sort: 'date' | reverse %}
+		{% for video in new_videos %}
+			<h2>{{ video.video_title }}</h2>
+			<p>
+				{% assign yt_id = video.video_yt_id %}
+				
+				{% capture thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
+				{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %}  
+
+				{% comment %}
+				{{ thumb_video }}
+				{{ video_url }}
+				{% endcomment %}
+
+				
+				<a class="link-video" data-fancybox="video-gallery" href="{{ video_url }}">
+				<div class="overlay"></div>
+				<img class="thumb-video" src="{{ thumb_video }}" />
+				</a>
+				
+			</p>
+		{% endfor %}
+	{% endif %}
+</div>
 
 {% schema %}
   {
     "name": "Videos metas",
-    "settings": []
+    "settings": [
+      {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+    ]
   }
 {% endschema %}

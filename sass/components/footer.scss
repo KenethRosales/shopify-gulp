@@ -1,0 +1,16 @@
+footer{
+    color: white;
+    ul{
+        li{
+            a{
+                color: $white !important;
+            }
+        }
+    }
+    .footer__content-top{
+        padding-bottom: 0;
+    }
+    .footer__content-bottom{
+        padding-top: 0;
+    }
+}

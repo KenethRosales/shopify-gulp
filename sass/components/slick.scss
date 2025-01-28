@@ -1,0 +1,23 @@
+.slick-arrow{
+	position: absolute;
+	top: auto;
+	bottom: 15%;
+	z-index: 50;
+
+	&:hover{
+		cursor: pointer;
+		svg{
+			path{
+				color: red !important;
+				fill: red !important;
+			}
+		}
+	}
+}
+.slick-prev{
+	left: auto;
+	right: 27%;
+}
+.slick-next{
+	right: 22%;
+}

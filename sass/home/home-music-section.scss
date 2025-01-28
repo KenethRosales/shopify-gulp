@@ -1,0 +1,78 @@
+#shopify-section-template--23983641329975__Music{
+    .page-width{
+        max-width: 1440px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 100px 0;
+
+        .title-section{
+            display: none;
+            color: $color__accent;
+            font-family: $font__accent;
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 0 0 30px;
+            text-align: center;
+        }
+
+        .slick-slider{
+            .slick-slide{
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+                align-items: center;
+
+                .release{
+                    &-image{
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    &-content{
+                        width: 40%;
+                        
+                        .release{
+                            &-title{
+                               h3{
+                                color: $color__accent;
+                                text-align: center;
+                                font-family: $font__accent;
+                                font-size: 45px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                                margin: 0 0 30px;
+                               }
+                            }
+                            &-button{
+                                display: flex;
+                                justify-content: center;
+
+                                a{
+                                    border: 2px solid $color__accent;
+                                    color: $color__accent;
+                                    font-family: $font__accent;
+                                    font-size: 14px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: normal;
+                                    padding: 10px 20px;
+                                    text-align: center;
+                                    transition: all 0.3s ease-in-out;
+                                    text-decoration: none;
+
+                                    &:hover{
+                                        opacity: 0.5;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
