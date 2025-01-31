@@ -118,34 +118,6 @@
         "padding_bottom": 36
       }
     },
-    "newsletter_Fxwnad": {
-      "type": "newsletter",
-      "blocks": {
-        "email_form_iJ4Vth": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "email_form_iJ4Vth"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "full_width": false,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "contact_form_Rg4Lna": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "subscribe_section_igDGky": {
       "type": "subscribe-section",
       "blocks": {
@@ -179,8 +151,6 @@
     "page_G6rt6L",
     "Tour",
     "featured_collection_wnJ3Bn",
-    "newsletter_Fxwnad",
-    "contact_form_Rg4Lna",
     "subscribe_section_igDGky"
   ]
 }
