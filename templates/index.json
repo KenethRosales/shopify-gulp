@@ -145,6 +145,31 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "subscribe_section_igDGky": {
+      "type": "subscribe-section",
+      "blocks": {
+        "email_form_zPt3fQ": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "email_form_zPt3fQ"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/video-poster.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -155,6 +180,7 @@
     "Tour",
     "featured_collection_wnJ3Bn",
     "newsletter_Fxwnad",
-    "contact_form_Rg4Lna"
+    "contact_form_Rg4Lna",
+    "subscribe_section_igDGky"
   ]
 }
