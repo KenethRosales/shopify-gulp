@@ -69,6 +69,31 @@
         "padding_bottom": 36
       }
     },
+    "videos_section_VkXTXQ": {
+      "type": "videos-section",
+      "blocks": {
+        "videos_index_pQyh6U": {
+          "type": "videos-index",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "videos_index_pQyh6U"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/video-poster.png",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "Videos": {
       "type": "videos-index",
       "disabled": true,
@@ -132,30 +157,6 @@
       ],
       "settings": {
         "image": "shopify://shop_images/video-poster.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "videos_section_VkXTXQ": {
-      "type": "videos-section",
-      "blocks": {
-        "videos_index_pQyh6U": {
-          "type": "videos-index",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "videos_index_pQyh6U"
-      ],
-      "settings": {
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
