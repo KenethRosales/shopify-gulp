@@ -8,21 +8,21 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-     "Videos": {
-      "type": "videos-index",
-      "settings": {}
-    }
-  },
-  "order": [
-    "main",
-    "Videos"
-  ]
+	"sections": {
+			"main": {
+			"type": "main-page",
+			"settings": {
+				"padding_top": 28,
+				"padding_bottom": 28
+			}
+		},
+			"Videos": {
+			"type": "videos-index",
+			"settings": {}
+		}
+	},
+	"order": [
+		"main",
+		"Videos"
+	]
 }
