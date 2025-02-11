@@ -81,6 +81,7 @@
         "videos_index_pQyh6U"
       ],
       "settings": {
+        "image": "shopify://shop_images/video-poster.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "middle-center",
