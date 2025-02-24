@@ -70,7 +70,7 @@
 
 <div
   id="Banner-{{ section.id }}"
-  class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  class="video__section banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
 >
   {%- if section.settings.image != blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
@@ -215,6 +215,26 @@
 	},
 	"settings": [
 		{
+			"type": "select",
+			"id": "video_section_style",
+			"options": [
+				{
+					"value": "style-1",
+					"label": "videos.section_video.style1"
+				},
+				{
+					"value": "style-2",
+					"label": "t:videos.section_video.style2"
+				},
+				{
+					"value": "style-3",
+					"label": "t:videos.section_video.style3"
+				}
+			],
+			"default": "center",
+			"label": "t:sections.image-banner.settings.mobile_content_alignment.label"
+		},
+		{
 			"type": "image_picker",
 			"id": "image",
 			"label": "t:sections.image-banner.settings.image.label"
@@ -258,82 +278,6 @@
 			"default": "medium",
 			"label": "t:sections.image-banner.settings.image_height.label",
 			"info": "t:sections.image-banner.settings.image_height.info"
-		},
-		{
-		"type": "select",
-		"id": "desktop_content_position",
-		"options": [
-			{
-				"value": "top-left",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
-			},
-			{
-				"value": "top-center",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
-			},
-			{
-				"value": "top-right",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
-			},
-			{
-				"value": "middle-left",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
-			},
-			{
-				"value": "middle-center",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
-			},
-			{
-				"value": "middle-right",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
-			},
-			{
-				"value": "bottom-left",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
-			},
-			{
-				"value": "bottom-center",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
-			},
-			{
-				"value": "bottom-right",
-				"label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
-			}
-		],
-		"default": "middle-center",
-		"label": "t:sections.image-banner.settings.desktop_content_position.label"
-		},
-		{
-			"type": "checkbox",
-			"id": "show_text_box",
-			"default": true,
-			"label": "t:sections.image-banner.settings.show_text_box.label"
-		},
-		{
-			"type": "select",
-			"id": "desktop_content_alignment",
-			"options": [
-				{
-					"value": "left",
-					"label": "t:sections.image-banner.settings.desktop_content_alignment.options__1.label"
-				},
-				{
-					"value": "center",
-					"label": "t:sections.image-banner.settings.desktop_content_alignment.options__2.label"
-				},
-				{
-					"value": "right",
-					"label": "t:sections.image-banner.settings.desktop_content_alignment.options__3.label"
-				}
-			],
-			"default": "center",
-			"label": "t:sections.image-banner.settings.desktop_content_alignment.label"
-		},
-		{
-			"type": "color_scheme",
-			"id": "color_scheme",
-			"label": "t:sections.all.colors.label",
-			"default": "background-1"
 		},
 		{
 			"type": "header",

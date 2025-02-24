@@ -1,6 +1,14 @@
-#shopify-section-template--23983641329975__Videos,
-#shopify-section-template--24010804166967__Videos{
-    .page-width{
+.video__section{
+    .banner__media{
+        background-color: transparent !important;
+        svg{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+    }
+    >.page-width{
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
@@ -16,6 +24,15 @@
             line-height: normal;
             margin: 0 0 30px;
             text-align: center;
+        }
+        .banner__box{
+            padding: 0;
+            max-width: 1440px;
+            min-width: 100%;
+            
+            >.page-width{
+                max-width: 1440px;
+            }
         }
 
         .slick-slider{
