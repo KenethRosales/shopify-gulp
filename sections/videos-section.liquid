@@ -137,7 +137,7 @@
       <div class="page-width page-width--narrow section-{{ section.id }}-padding">
 			{% if template.name == "index" %}
 				<h2 class="title-section">Videos</h2>
-				<div class="videos-list js-videos-list">
+				<div class="videos-list {{ section.settings.video_section_style }} js-videos-list">
 					{% assign videos = shop.metaobjects.videos.values %}
 					{% assign new_videos = videos | sort: 'release_date_new' | reverse %}
 					{% assign i = 0 %}
