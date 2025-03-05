@@ -1,7 +1,16 @@
-#shopify-section-template--24159270306103__Music, #shopify-section-template--24010804166967__Music{
-    .page-width{
+.music__section{
+    .banner__media{
+        background-color: transparent !important;
+        svg{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+    }
+    >.page-width{
         max-width: 1440px;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         padding: 100px 0;
 
@@ -17,56 +26,129 @@
             text-align: center;
         }
 
-        .slick-slider{
-            .slick-slide{
-                display: flex;
-                flex-flow: row;
-                justify-content: center;
-                align-items: center;
+        .banner__box{
+            background: transparent;
+            padding: 0;
+            max-width: 1440px;
+            min-width: 100%;
+            
+            >.page-width{
+                max-width: 1440px;
+            }
+        }
+    }
+}
 
-                .release{
-                    &-image{
-                        width: 50%;
-                        display: flex;
-                        justify-content: center;
-                    }
-                    &-content{
-                        width: 40%;
-                        
-                        .release{
-                            &-title{
-                               h3{
+.music__section{
+    .music-list.style-1{
+        .slick-slide{
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+
+            .music{
+                &-image{
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                }
+                &-content{
+                    width: 40%;
+                    
+                    .music{
+                        &-title{
+                           h3{
+                            color: $color__accent;
+                            text-align: center;
+                            font-family: $font__accent;
+                            font-size: 45px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            margin: 0 0 30px;
+                           }
+                        }
+                        &-button{
+                            display: flex;
+                            justify-content: center;
+
+                            a{
+                                border: 2px solid $color__accent;
                                 color: $color__accent;
-                                text-align: center;
                                 font-family: $font__accent;
-                                font-size: 45px;
+                                font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
                                 line-height: normal;
-                                margin: 0 0 30px;
-                               }
+                                padding: 10px 20px;
+                                text-align: center;
+                                transition: all 0.3s ease-in-out;
+                                text-decoration: none;
+
+                                &:hover{
+                                    opacity: 0.5;
+                                    cursor: pointer;
+                                }
                             }
-                            &-button{
-                                display: flex;
-                                justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-                                a{
-                                    border: 2px solid $color__accent;
-                                    color: $color__accent;
-                                    font-family: $font__accent;
-                                    font-size: 14px;
-                                    font-style: normal;
-                                    font-weight: 700;
-                                    line-height: normal;
-                                    padding: 10px 20px;
-                                    text-align: center;
-                                    transition: all 0.3s ease-in-out;
-                                    text-decoration: none;
+.music__section{
+    .music-list.style-2{
+        .slick-slide{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
 
-                                    &:hover{
-                                        opacity: 0.5;
-                                        cursor: pointer;
-                                    }
+            .music{
+                &-image{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                &-content{
+                    width: 100%;
+                    
+                    .music{
+                        &-title{
+                           h3{
+                            color: $color__accent;
+                            text-align: center;
+                            font-family: $font__accent;
+                            font-size: 45px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            margin: 0 0 30px;
+                           }
+                        }
+                        &-button{
+                            display: flex;
+                            justify-content: center;
+
+                            a{
+                                border: 2px solid $color__accent;
+                                color: $color__accent;
+                                font-family: $font__accent;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                                padding: 10px 20px;
+                                text-align: center;
+                                transition: all 0.3s ease-in-out;
+                                text-decoration: none;
+
+                                &:hover{
+                                    opacity: 0.5;
+                                    cursor: pointer;
                                 }
                             }
                         }

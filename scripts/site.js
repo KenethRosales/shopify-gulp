@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 
 	var next_arrow = '<div class="slick-arrow slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M20 10L5 18.6603L5 1.33974L20 10Z" fill="black"/></svg></svg></div>';
 
-    jQuery('.js-release-list').slick({
+    jQuery('.music-list.style-1').slick({
         slidesToShow: 1,
 		slidesToScroll: 1,
 		speed: 300,
@@ -16,6 +16,19 @@ jQuery(document).ready(function() {
 		useTransform: true,
 		dots: false,
 		fade: true,
+		prevArrow: prev_arrow,
+		nextArrow:next_arrow,
+	});
+
+	jQuery('.music-list.style-2, .music-list.style-3, .music-list.style-4 ').slick({
+        slidesToShow: 3,
+		slidesToScroll: 1,
+		speed: 300,
+		centerMode: true,
+		cssEase: "ease-in-out",
+		useTransform: true,
+		dots: false,
+		fade: false,
 		prevArrow: prev_arrow,
 		nextArrow:next_arrow,
 	});
