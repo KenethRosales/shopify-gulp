@@ -70,6 +70,28 @@
         "padding_bottom": 36
       }
     },
+    "music_section_C6JXcq": {
+      "type": "music-section",
+      "blocks": {
+        "music_index_6mk8gn": {
+          "type": "music-index",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "music_index_6mk8gn"
+      ],
+      "settings": {
+        "music_section_style": "style-1",
+        "image": "shopify://shop_images/video-poster.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "videos_section_VkXTXQ": {
       "type": "videos-section",
       "blocks": {
@@ -171,6 +193,7 @@
   "order": [
     "slideshow_YDEj3N",
     "Music",
+    "music_section_C6JXcq",
     "videos_section_VkXTXQ",
     "Videos",
     "page_G6rt6L",
