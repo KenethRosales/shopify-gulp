@@ -134,74 +134,55 @@
   {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
-      	<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+        <div class="page-width page-width--narrow section-{{ section.id }}-padding">
 			{% if template.name == "index" %}
-				<h2 class="title-section">Videos</h2>
-				<div class="videos-list {{ section.settings.video_section_style }} js-videos-list">
-					{% assign videos = shop.metaobjects.videos.values %}
-					{% assign new_videos = videos | sort: 'release_date_new' | reverse %}
-					{% assign i = 0 %}
-					{% for video in new_videos %}
-						{% assign i = i | plus:1 %}
-						{% if i <= 5 %}
-							{% assign yt_id = video.video_yt_id %}
-							{% assign thumb_video = video.thumbnail %}
-
-							{% comment %}
-							{{video_thumb | image_url }}
-							{% endcomment %}
-							{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
-
-							{% if thumb_video != blank %}
-								{% assign new_thumb_video = thumb_video | image_url %}
-							{% else %}
-								{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-							{% endif %}
-							
-							<div class="single-video">
-								<div class="overlay"></div>
-								<div class="video-image">
-									<img class="thumb-video" src="{{ new_thumb_video }}" />
-								</div>
-								<h2 class="title-video">{{ video.video_title }}</h2>
-								<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
-									Watch
-								</a>
-							</div>
-
-								{% comment %}
-								{{ thumb_video }}
-								{{ video_url }}
-								{% endcomment %}
-
-						{% endif %}
-					{% endfor %}
-				</div>
-			{% else %}
-				{% assign videos = shop.metaobjects.videos.values %}
-				{% assign new_videos = videos | sort: 'date' | reverse %}
-				{% for video in new_videos %}
-					<h2>{{ video.video_title }}</h2>
-					<p>
-						{% assign yt_id = video.video_yt_id %}
-						
-						{% capture thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-						{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %}  
-
-						{% comment %}
-						{{ thumb_video }}
-						{{ video_url }}
-						{% endcomment %}
-
-						
-						<a class="link-video" data-fancybox="video-gallery" href="{{ video_url }}">
-						<div class="overlay"></div>
-						<img class="thumb-video" src="{{ thumb_video }}" />
-						</a>
-						
-					</p>
-				{% endfor %}
-			{% endif %}
+                <h2 class="title-section">Music</h2>
+                <div class="release-list js-release-list">
+                    {% assign music_releases = shop.metaobjects.music.values %}
+                    {% assign new_music_releases = music_releases | sort: 'release_date_new' | reverse %}
+                    {% assign i = 0 %}
+                    {% for music_release in new_music_releases %}
+                        {% assign i = i | plus:1 %}
+                        {% if i <= 5 %}
+                            <div class="release">
+                                <div class="release-image">
+                                    <img src="{{ music_release.album_image | image_url: width: 400 }}" alt="">
+                                </div>
+                                <div class="release-content">
+                                    <div class="release-title">
+                                        <h3>{{ music_release.name_of_album }}</h3>
+                                    </div>
+                                    <div class="release-button">
+                                        <a class="music-button" href="{{ music_release.album_link.value['url'] }}" target="_blank">
+                                            {{ music_release.album_link.value["text"] }} 
+                                        </a> 
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {% assign music_releases = shop.metaobjects.music.values %}
+                {% paginate  music_releases by 5 %}
+                {% assign newpag_music_releases = music_releases  | sort: 'release_date_new' | reverse %}
+                {% for music_release in newpag_music_releases %}
+                    <h2>{{ music_release.name_of_album }}</h2>
+                    <p>
+                        <img src="{{ music_release.album_image | image_url: width: 300 }}" alt="">
+                    </p>
+                    <p>
+                        <a href="{{ music_release.album_link.value['url'] }}" target="_blank">
+                            {{ music_release.album_link.value["text"] }} 
+                        </a> 
+                    </p>
+                    <p>
+                        {{ music_release.release_date_new }} 
+                    </p>
+                {% endfor %}
+                {{- paginate | default_pagination -}}
+                {%- endpaginate -%}
+            {% endif %}
 		</div>
     </div>
   </div>
@@ -209,7 +190,7 @@
 
 {% schema %}
 {
-	"name": "Videos Metas",
+	"name": "Music Metas",
 	"tag": "section",
 	"class": "section",
 	"disabled_on": {
@@ -218,27 +199,27 @@
 	"settings": [
 		{
 			"type": "select",
-			"id": "video_section_style",
+			"id": "music_section_style",
 			"options": [
 				{
 					"value": "style-1",
-					"label": "videos.section_video.style1"
+					"label": "music.section_music.style1"
 				},
 				{
 					"value": "style-2",
-					"label": "videos.section_video.style2"
+					"label": "music.section_music.style2"
 				},
 				{
 					"value": "style-3",
-					"label": "videos.section_video.style3"
+					"label": "music.section_music.style3"
 				},
-				{
+                {
 					"value": "style-4",
-					"label": "videos.section_video.style4"
+					"label": "music.section_music.style4"
 				}
 			],
 			"default": "style-1",
-			"label": "videos.section_video.style1"
+			"label": "music.section_music.style1"
 		},
 		{
 			"type": "image_picker",
@@ -352,8 +333,8 @@
 	],
 	"blocks": [
 		{
-			"type": "videos-index",
-			"name": "Test video",
+			"type": "music-index",
+			"name": "Music",
 			"limit": 1
 		},
 		{
@@ -362,10 +343,10 @@
 	],
 	"presets": [
 		{
-		"name": "Videos metas",
+		"name": "Music metas",
 		"blocks": [
 			{
-			"type": "videos-index"
+			"type": "music-index"
 			}
 		]
 		}
