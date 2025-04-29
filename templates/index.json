@@ -114,6 +114,28 @@
         "show_text_below": true
       }
     },
+    "tour_section_ygej4U": {
+      "type": "tour-section",
+      "blocks": {
+        "tour_dates_pMrVxx": {
+          "type": "tour-dates",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "tour_dates_pMrVxx"
+      ],
+      "name": "Tour dates",
+      "settings": {
+        "tour_section_style": "style-1",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "Videos": {
       "type": "videos-index",
       "disabled": true,
@@ -124,6 +146,7 @@
     },
     "page_G6rt6L": {
       "type": "page",
+      "disabled": true,
       "settings": {
         "page": "tour",
         "heading_size": "h1",
@@ -131,10 +154,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "Tour": {
-      "type": "tour-index",
-      "settings": {}
     },
     "featured_collection_wnJ3Bn": {
       "type": "featured-collection",
@@ -195,9 +214,9 @@
     "Music",
     "music_section_C6JXcq",
     "videos_section_VkXTXQ",
+    "tour_section_ygej4U",
     "Videos",
     "page_G6rt6L",
-    "Tour",
     "featured_collection_wnJ3Bn",
     "subscribe_section_igDGky"
   ]
