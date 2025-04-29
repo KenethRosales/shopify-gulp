@@ -11,3 +11,43 @@
         }
     }
 }
+
+.tour__section{
+    .banner__media{
+        background-color: transparent !important;
+        svg{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+    }
+    >.page-width{
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 100px 0;
+
+        .title-section{
+            display: none;
+            color: $color__accent;
+            font-family: $font__accent;
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 0 0 30px;
+            text-align: center;
+        }
+        .banner__box{
+            background: transparent;
+            padding: 0;
+            max-width: 1440px;
+            min-width: 100%;
+            
+            >.page-width{
+                max-width: 1440px;
+            }
+        }
+    }
+}
