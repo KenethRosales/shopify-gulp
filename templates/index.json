@@ -106,7 +106,7 @@
       "settings": {
         "video_section_style": "style-4",
         "image": "shopify://shop_images/video-poster.png",
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 30,
         "image_height": "large",
         "image_behavior": "fixed",
         "mobile_content_alignment": "center",
