@@ -61,6 +61,7 @@
             &-event{
                 border-top: 0 !important;
                 flex-flow: row wrap;
+                flex-grow: unset;
                 margin: 20px 0;
                 padding: 0;
                 gap: 20px 0 !important;
