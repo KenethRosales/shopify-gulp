@@ -1,7 +1,7 @@
 .slick-arrow{
 	position: absolute;
-	top: auto;
-	bottom: 15%;
+	top: 50%;
+	bottom: auto;
 	z-index: 50;
 
 	&:hover{
@@ -15,9 +15,8 @@
 	}
 }
 .slick-prev{
-	left: auto;
-	right: 27%;
+	left: 0;
 }
 .slick-next{
-	right: 22%;
+	right: 0;
 }
