@@ -1,8 +1,23 @@
+.store__section{
+    .banner__media{
+        background-color: transparent !important;
+        svg{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+    }
+}
+
 #shopify-section-template--23983641329975__featured_collection_wnJ3Bn,
 #shopify-section-template--24010804166967__featured_collection_wnJ3Bn,
 #shopify-section-template--24493437255991__featured_collection_wnJ3Bn{
-    max-width: 1140px;
-    margin: 0 auto;
+    /*max-width: 1140px;
+    margin: 0 auto;*/
+    .color-background-1{
+        background-color: transparent;
+    }
     .collection__title {
         display: none;
     }
