@@ -1,38 +1,59 @@
 .seated{
     &-events-table{
-        border-top: 0;
+        border-top: 0 !important;
+        max-width: 1000px;
+        margin: 0 auto;
 
         .seated-event{
             &-row{
                 border-bottom: 0;
+                flex-flow: row wrap;
                 div, a{
+                    color: $black;
                     font-family: $font__accent;
+                    opacity: 1 !important;
                 }
             }
+            &-description-cells{
+                display: flex;
+                flex-flow: row wrap;
+            }
+
             &-date-cell{
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 26px; /* 162.5% */
                 letter-spacing: 3.52px;
+                text-align: left;
             }
-            &-venue-name{
-                font-size: 27px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-            }
-            &-venue-location{
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 31px;
+            &-venue-cell{
+                display: flex;
+                flex-flow: row wrap;
+                .seated-event-venue-name, .seated-event-venue-location{
+                    text-align: left;
+                }
+                .seated-event-venue-name{
+                    font-size: 27px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+                .seated-event-venue-location{
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 31px;
+                }
             }
             &-link-cell{
+                justify-content: flex-end;
+                gap: 0 10px;
                 align-items: flex-end;
                 a{
                     border: 2px solid #000;
                     padding: 10px 20px;
+                    margin: 0;
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 700;
@@ -51,8 +72,11 @@
         }
     }
 }
+
 .bit{
     &-widget-container{
+        max-width: 1000px;
+        margin: 0 auto;
         .bit{
             &-upcoming-events{
                 margin: 0 !important;
@@ -60,11 +84,11 @@
             }
             &-event{
                 border-top: 0 !important;
-                flex-flow: row wrap;
-                flex-grow: unset;
-                margin: 20px 0;
+                margin: 10px 0;
                 padding: 0;
                 gap: 20px 0 !important;
+                flex-flow: row wrap;
+                flex-grow: unset;
             }
             &-details{
                 display: flex;
@@ -72,13 +96,12 @@
                 align-items: center;
                 flex-flow: row wrap;
                 flex-grow: unset;
-                width: 80%;
+
+                >div{
+                    text-align: left;
+                }
                 div{
                     font-family: $font__accent;
-                    &:nth-child(1){
-                        width: 100%;
-
-                    }
                     .bit-date{
                         font-size: 16px;
                         font-style: normal;
@@ -88,7 +111,6 @@
                     }
                 }
                 div.bit-titleWrapper{
-                    width: 50%;
                     .bit-venue{
                         width: 100%;
                         font-size: 27px;
@@ -98,7 +120,6 @@
                     }
                 }
                 .bit-location{
-                    width: 40%;
                     font-size: 20px;
                     font-style: normal;
                     font-weight: 400;
@@ -107,22 +128,21 @@
                 }
             }
             &-details.bit-event-buttons{
-                width: 20%;
                 justify-content: flex-end !important;
-                div{
-                    width:50%;
-                    margin: 0;
 
-                    a{
-                        @include primary-button();
-                    }
-                }
                 .bit-rsvp-container{
                     width: auto;
                     flex-basis: auto;
                 }
                 .bit-single-cta{
                     flex-basis: auto;
+                }
+                div{
+                    margin: 0;
+
+                    a{
+                        @include primary-button();
+                    }
                 }
             }
         }

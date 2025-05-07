@@ -65,21 +65,9 @@
             right: 22%;
         }
         .slick-slide{
-            display: flex;
-            flex-flow: row;
-            justify-content: center;
-            align-items: center;
-
             .music{
                 &-image{
                     width: 50%;
-                    display: flex;
-                    justify-content: center;
-
-                    img{
-                        object-fit: cover;
-                        width: 100%;
-                    }
                 }
                 &-content{
                     width: 40%;
@@ -87,132 +75,29 @@
                     .music{
                         &-title{
                            h3{
-                            color: $color__accent;
-                            text-align: center;
-                            font-family: $font__accent;
                             font-size: 45px;
-                            font-style: normal;
-                            font-weight: 700;
-                            line-height: normal;
                             margin: 0 0 30px;
                            }
                         }
-                        &-button{
-                            display: flex;
-                            justify-content: center;
-
-                            a{
-                                border: 2px solid $color__accent;
-                                color: $color__accent;
-                                font-family: $font__accent;
-                                font-size: 14px;
-                                font-style: normal;
-                                font-weight: 700;
-                                line-height: normal;
-                                padding: 10px 20px;
-                                text-align: center;
-                                transition: all 0.3s ease-in-out;
-                                text-decoration: none;
-
-                                &:hover{
-                                    opacity: 0.5;
-                                    cursor: pointer;
-                                }
-                            }
-                        }
                     }
                 }
             }
         }
     }
 }
-
+/*
 .music__section{
     .music-list.style-2{
-        max-width: 80%;
-        margin: 0 auto;
-        .slick-arrow{
-            top: 35%;
-        }
-        .slick-list{
-            padding: 0 !important;
-        }
-        .slick-slide{
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
-            //margin: 0 20px;
-
-            .music{
-                &-image{
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    max-width: 300px;
-                    img{
-                        object-fit: cover;
-                        width: 100%;
-                    }
-                }
-                &-content{
-                    width: 100%;
-                    
-                    .music{
-                        &-title{
-                           h3{
-                            color: $color__accent;
-                            text-align: center;
-                            font-family: $font__accent;
-                            font-size: 20px;
-                            font-style: normal;
-                            font-weight: 700;
-                            line-height: normal;
-                            margin: 10px 0;
-                           }
-                        }
-                        &-button{
-                            display: flex;
-                            justify-content: center;
-
-                            a{
-                                @include primary-button();
-                                transition: all 0.3s ease-in-out;
-                                text-decoration: none;
-
-                                &:hover{
-                                    opacity: 0.5;
-                                    cursor: pointer;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // All is normal
     }
 }
-
+*/
 .music__section{
     .music-list.style-3{
-        max-width: 80%;
-        margin: 0 auto;
-        .slick-arrow{
-            top: 35%;
-        }
-        .slick-list{
-            padding: 0 !important;
-        }
-
         .music{
             position: relative;
             &-image{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                max-width: 300px;
                 position: relative;
-
                 &::after{
                     content: "";
                     background: rgba(0, 0, 0, 0.6);
@@ -222,45 +107,18 @@
                     width: 100%;
                     height: 100%;
                     opacity: 0;
-                }
-                img{
-                    object-fit: cover;
-                    width: 100%;
+                    transition: all 0.3s ease-in-out;
                 }
             }
             &-content{
-                width: 100%;
-                
                 .music{
-                    &-title{
-                        h3{
-                        color: $color__accent;
-                        text-align: center;
-                        font-family: $font__accent;
-                        font-size: 20px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: normal;
-                        margin: 10px 0;
-                        }
-                    }
                     &-button{
                         position: absolute;
                         top: 35%;
                         left: 50%;
                         transform: translateX(-50%);
                         opacity: 0;
-
-                        a{
-                            @include secondary-button();
-                            transition: all 0.3s ease-in-out;
-                            text-decoration: none;
-
-                            &:hover{
-                                opacity: 0.5;
-                                cursor: pointer;
-                            }
-                        }
+                        min-width: max-content;
                     }
                 }
             }
@@ -277,6 +135,38 @@
                 }
             }
         }
-        
+    }
+}
+
+.music__section{
+    .music-list.style-4{
+        max-width: 70%;
+        .slick-list{
+            padding: 50px 0 !important;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .slick-slide{
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            //margin: 0 20px;
+            .music{
+                &-content{
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+        .slick-slide.slick-center{
+            margin-top: 15px;
+            position: relative;
+            z-index: 10;
+            transform: scale(1.25);
+            .music{
+                &-content{
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
