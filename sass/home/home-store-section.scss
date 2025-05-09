@@ -113,22 +113,31 @@
             right: 22%;
         }
         .slick-slide{
-            .music{
-                &-image{
-                    width: 50%;
-                }
-                &-content{
-                    width: 40%;
-                    
-                    .music{
-                        &-title{
-                           h3{
-                            font-size: 45px;
-                            margin: 0 0 30px;
-                           }
-                        }
+            opacity: 0;
+            .card-wrapper{
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+                width: 100%;
+
+                .card--media{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    .card__inner{
+                        width: 50%;
+                    }
+                    .card__content{
+                        width: 40%;
                     }
                 }
+            }
+        }
+        .slick-current.slick-active{
+            .card-wrapper{
+                opacity: 1;
+                transition: all 0.3s ease-in-out;
             }
         }
     }

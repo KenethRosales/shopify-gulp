@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
 		prevArrow: prev_arrow,
 		nextArrow:next_arrow,
 	});
-	jQuery('.product-grid').slick({
+	jQuery('.store-list.style-1, store-list.style-2, store-list style-4').slick({
         slidesToShow: 3,
 		slidesToScroll: 1,
 		speed: 300,
@@ -54,6 +54,18 @@ jQuery(document).ready(function() {
 		useTransform: true,
 		dots: false,
 		fade: false,
+		prevArrow: prev_arrow,
+		nextArrow:next_arrow,
+	});
+	jQuery('.store-list.style-3').slick({
+        slidesToShow: 1,
+		slidesToScroll: 1,
+		speed: 300,
+		centerMode: true,
+		cssEase: "ease-in-out",
+		useTransform: true,
+		dots: false,
+		fade: true,
 		prevArrow: prev_arrow,
 		nextArrow:next_arrow,
 	});

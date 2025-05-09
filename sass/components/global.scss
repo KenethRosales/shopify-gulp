@@ -254,16 +254,11 @@
 
 .store__section{
     .store-list:not(.style-3){
-        max-width: 90%;
-        margin: 0 auto;
-
         .slick-arrow{
             top: 35%;
         }
         .slick-list{
             padding: 0 !important;
-            margin: 0 auto;
-            width: 90%;
 
             .slick-slide{
                 .card-wrapper{
@@ -287,12 +282,6 @@
                 }
             }
         }
-        /*.music{
-            &-image{
-                width: 100%;
-                max-width: 300px;
-            }
-        }*/
     }
 }
 .store__section{
@@ -300,6 +289,13 @@
         padding: 0 !important;
     }
     .store-list{
+        max-width: 90%;
+        margin: 0 auto;
+
+        .slick-list{
+            margin: 0 auto;
+            width: 90%;
+        }
         .slick-slide{
             display: flex;
             flex-flow: column;
