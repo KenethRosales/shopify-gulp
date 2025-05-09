@@ -158,6 +158,13 @@
     "featured_collection_wnJ3Bn": {
       "type": "featured-collection",
       "settings": {
+        "store_section_style": "style-3",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
         "title": "Store",
         "heading_size": "h1",
         "description": "",
