@@ -1,20 +1,175 @@
 .store__section{
+    &::after{
+        display: none !important;
+    }
     .banner__media{
         background-color: transparent !important;
         svg{
-            display: none;
+            display: none !important;
         }
         &::after{
             display: none;
         }
     }
+    .collection{
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 100px 0;
+
+        .title{
+            display: none;
+            color: $color__accent;
+            font-family: $font__accent;
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 0 0 30px;
+            text-align: center;
+        }
+    }
+}
+/*
+.music__section{
+    .music-list.style-2{
+        // All is normal
+    }
+}
+*/
+.store__section{
+    .store-list.style-1{
+        .slick-slide{
+            margin: 0 30px;
+        }
+    }
+}
+.store__section{
+    .store-list.style-2{
+        .slick-slide{
+            position: relative;
+            margin: 0 30px;
+
+            .card__media{
+                &::after{
+                    content: "";
+                    background: rgba(0, 0, 0, 0.6);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            .quick-add {
+                position: absolute;
+                top: 35%;
+                left: 50%;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+                transform: translateX(-50%);
+            }
+
+            &:hover{
+                .card__media{
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+                .quick-add {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
 
-#shopify-section-template--23983641329975__featured_collection_wnJ3Bn,
-#shopify-section-template--24010804166967__featured_collection_wnJ3Bn,
-#shopify-section-template--24493437255991__featured_collection_wnJ3Bn{
-    /*max-width: 1140px;
-    margin: 0 auto;*/
+.store__section{
+    .store-list.style-3{
+        .slick-arrow{
+            position: absolute;
+            top: 50%;
+            bottom: 15%;
+            z-index: 50;
+        
+            &:hover{
+                cursor: pointer;
+                svg{
+                    path{
+                        color: red !important;
+                        fill: red !important;
+                    }
+                }
+            }
+        }
+        .slick-prev{
+            left: auto;
+            right: 27%;
+        }
+        .slick-next{
+            right: 22%;
+        }
+        .slick-slide{
+            .music{
+                &-image{
+                    width: 50%;
+                }
+                &-content{
+                    width: 40%;
+                    
+                    .music{
+                        &-title{
+                           h3{
+                            font-size: 45px;
+                            margin: 0 0 30px;
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.store__section{
+    .store-list.style-4{
+        max-width: 90%;
+        .slick-list{
+            padding: 50px 0 !important;
+            max-width: 70%;
+            margin: 0 auto;
+        }
+        .slick-slide{
+            transition: all 0.3s ease-in-out;
+            .card-wrapper{
+                transform: scale(1);
+                transition: all 0.3s ease-in-out;
+
+                .card__content{
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+        .slick-slide.slick-center{
+            margin-top: 15px;
+            position: relative;
+            z-index: 10;
+            .card-wrapper{
+                transform: scale(1.25);
+
+                .card__content{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+/*
+#shopify-section-template--23983641329975__featured_collection_wnJ3Bn{
     .color-background-1{
         background-color: transparent;
     }
@@ -96,4 +251,4 @@
             }
         }
     }
-}
+}*/

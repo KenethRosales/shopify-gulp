@@ -2,7 +2,7 @@
     .banner__media{
         background-color: transparent !important;
         svg{
-            display: none;
+            display: none !important;
         }
         &::after{
             display: none;
@@ -140,10 +140,10 @@
 
 .music__section{
     .music-list.style-4{
-        max-width: 70%;
+        max-width: 90%;
         .slick-list{
             padding: 50px 0 !important;
-            max-width: 80%;
+            max-width: 70%;
             margin: 0 auto;
         }
         .slick-slide{

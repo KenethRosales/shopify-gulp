@@ -2,7 +2,7 @@
     .banner__media{
         background-color: transparent !important;
         svg{
-            display: none;
+            display: none !important;
         }
         &::after{
             display: none;
