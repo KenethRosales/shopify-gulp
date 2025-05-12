@@ -1,4 +1,7 @@
 .store__section{
+    .banner{
+        flex-direction: column;
+    }
     &::after{
         display: none !important;
     }
@@ -91,8 +94,8 @@
     .store-list.style-3{
         .slick-arrow{
             position: absolute;
-            top: 50%;
-            bottom: 15%;
+            top: auto;
+            bottom: 20%;
             z-index: 50;
         
             &:hover{
@@ -107,10 +110,10 @@
         }
         .slick-prev{
             left: auto;
-            right: 27%;
+            right: 33.5%;
         }
         .slick-next{
-            right: 22%;
+            right: 28.5%;
         }
         .slick-slide{
             opacity: 0;
@@ -126,10 +129,11 @@
                     align-items: center;
 
                     .card__inner{
-                        width: 50%;
-                    }
-                    .card__content{
                         width: 40%;
+                    }
+                    >.card__content{
+                        width: 40%;
+                        flex-grow: inherit;
                     }
                 }
             }

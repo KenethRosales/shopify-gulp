@@ -2,16 +2,9 @@
 
 .music__section{
     .music-list:not(.style-1){
-        max-width: 90%;
-        margin: 0 auto;
 
         .slick-arrow{
             top: 35%;
-        }
-        .slick-list{
-            padding: 0 !important;
-            margin: 0 auto;
-            width: 90%;
         }
         .music{
             &-image{
@@ -23,6 +16,15 @@
 }
 .music__section{
     .music-list{
+        max-width: 90%;
+        margin: 0 auto;
+
+        .slick-list{
+            padding: 0 !important;
+            margin: 0 auto;
+            width: 90%;
+        }
+
         .slick-slide{
             display: flex;
             flex-flow: column;
