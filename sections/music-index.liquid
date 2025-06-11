@@ -15,45 +15,73 @@
 {%- endstyle -%}
 
 <div class="page__music page-width page-width--narrow section-{{ section.id }}-padding {{ section.settings.music_section_style }}">
-			{% comment %}
-			{% assign music_releases = shop.metaobjects.music.values %}
-			{% assign new_music_releases = music_releases | sort: 'release_date_new' | reverse %}
-			{% for music_release in newpag_music_releases %}
-				<h2>{{ music_release.name_of_album }}</h2>
-				<p>
-					<img src="{{ music_release.album_image | image_url: width: 300 }}" alt="">
-				</p>
-				<p>
-					<a href="{{ music_release.album_link.value['url'] }}" target="_blank">
-						{{ music_release.album_link.value["text"] }} 
-					</a> 
-				</p>
-				<p>
-					{{ music_release.release_date_new }} 
-				</p>
-			{% endfor %}
-			{% endcomment %}
+	{% assign music_releases = shop.metaobjects.music.values %}
+	{% assign new_music_releases = music_releases | sort: 'release_date_new' | reverse %}
+	{% assign i = 0 %}
 
-			{% assign music_releases = shop.metaobjects.music.values %}
-			{% paginate  music_releases by 5 %}
-			{% assign newpag_music_releases = music_releases  | sort: 'release_date_new' | reverse %}
-			{% for music_release in newpag_music_releases %}
-				<h2>{{ music_release.name_of_album }}</h2>
-				<p>
-					<img src="{{ music_release.album_image | image_url: width: 300 }}" alt="">
-				</p>
-				<p>
+	{% if section.settings.music_section_style == "style-4" %}
+		<div class="music-list-featured">
+			{% for music_release in new_music_releases %}
+				{% if music_release.featured == true %}
+					{% assign i = i | plus:1 %}
+					{% if i <= 5 %}
+						<div class="music">
+							<div class="music-image">
+								<img src="{{ music_release.album_image | image_url: width: 400 }}" alt="">
+							</div>
+							<div class="music-content">
+								<div class="music-title">
+									<h3>{{ music_release.name_of_album }}</h3>
+								</div>
+								<div class="music-button">
+									<a class="music-button" href="{{ music_release.album_link.value['url'] }}" target="_blank">
+										{{ music_release.album_link.value["text"] }} 
+									</a> 
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</div>
+		
+		<div class="music-list">
+			{% for music_release in new_music_releases %}
+				{% if music_release.featured == false or music_release.featured == Null %}
+					<div class="music__release">
+						<div class="music__image">
+								<figure>
+								<img src="{{ music_release.album_image | image_url }}" alt="">
+							</figure>
+						</div>
+						<div class="music__content">
+							<h2>{{ music_release.name_of_album }}</h2>
+							<a href="{{ music_release.album_link.value['url'] }}" target="_blank">
+								{{ music_release.album_link.value["text"] }} 
+							</a> 
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+	{% else %}
+		{% for music_release in new_music_releases %}
+			<div class="music__release">
+				<div class="music__image">
+						<figure>
+						<img src="{{ music_release.album_image | image_url }}" alt="">
+					</figure>
+				</div>
+				<div class="music__content">
+					<h2>{{ music_release.name_of_album }}</h2>
 					<a href="{{ music_release.album_link.value['url'] }}" target="_blank">
 						{{ music_release.album_link.value["text"] }} 
 					</a> 
-				</p>
-				<p>
-				music index
-					{{ music_release.release_date_new }} 
-				</p>
-			{% endfor %}
-		 	{{- paginate | default_pagination -}}
-			{%- endpaginate -%}
+				</div>
+			</div>
+		{% endfor %}
+	{% endif %}
 </div>
 
 

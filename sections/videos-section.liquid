@@ -135,73 +135,47 @@
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       	<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-			{% if template.name == "index" %}
-				<h2 class="title-section">Videos</h2>
-				<div class="videos-list {{ section.settings.video_section_style }} js-videos-list">
-					{% assign videos = shop.metaobjects.videos.values %}
-					{% assign new_videos = videos | sort: 'release_date_new' | reverse %}
-					{% assign i = 0 %}
-					{% for video in new_videos %}
-						{% assign i = i | plus:1 %}
-						{% if i <= 5 %}
-							{% assign yt_id = video.video_yt_id %}
-							{% assign thumb_video = video.thumbnail %}
-
-							{% comment %}
-							{{video_thumb | image_url }}
-							{% endcomment %}
-							{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
-
-							{% if thumb_video != blank %}
-								{% assign new_thumb_video = thumb_video | image_url %}
-							{% else %}
-								{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-							{% endif %}
-							
-							<div class="single-video">
-								<div class="overlay"></div>
-								<div class="video-image">
-									<img class="thumb-video" src="{{ new_thumb_video }}" />
-								</div>
-								<h2 class="title-video">{{ video.video_title }}</h2>
-								<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
-									Watch
-								</a>
-							</div>
-
-								{% comment %}
-								{{ thumb_video }}
-								{{ video_url }}
-								{% endcomment %}
-
-						{% endif %}
-					{% endfor %}
-				</div>
-			{% else %}
+			<h2 class="title-section">Videos</h2>
+			<div class="videos-list {{ section.settings.video_section_style }} js-videos-list">
 				{% assign videos = shop.metaobjects.videos.values %}
-				{% assign new_videos = videos | sort: 'date' | reverse %}
+				{% assign new_videos = videos | sort: 'release_date_new' | reverse %}
+				{% assign i = 0 %}
 				{% for video in new_videos %}
-					<h2>{{ video.video_title }}</h2>
-					<p>
+					{% assign i = i | plus:1 %}
+					{% if i <= 5 %}
 						{% assign yt_id = video.video_yt_id %}
-						
-						{% capture thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-						{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %}  
+						{% assign thumb_video = video.thumbnail %}
 
 						{% comment %}
-						{{ thumb_video }}
-						{{ video_url }}
+						{{video_thumb | image_url }}
 						{% endcomment %}
+						{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
 
+						{% if thumb_video != blank %}
+							{% assign new_thumb_video = thumb_video | image_url %}
+						{% else %}
+							{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
+						{% endif %}
 						
-						<a class="link-video" data-fancybox="video-gallery" href="{{ video_url }}">
-						<div class="overlay"></div>
-						<img class="thumb-video" src="{{ thumb_video }}" />
-						</a>
-						
-					</p>
+						<div class="single-video">
+							<div class="overlay"></div>
+							<div class="video-image">
+								<img class="thumb-video" src="{{ new_thumb_video }}" />
+							</div>
+							<h2 class="title-video">{{ video.video_title }}</h2>
+							<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
+								Watch
+							</a>
+						</div>
+
+							{% comment %}
+							{{ thumb_video }}
+							{{ video_url }}
+							{% endcomment %}
+
+					{% endif %}
 				{% endfor %}
-			{% endif %}
+			</div>
 		</div>
     </div>
   </div>

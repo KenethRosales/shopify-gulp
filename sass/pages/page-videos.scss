@@ -1,0 +1,103 @@
+.page__videos{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .single-video{
+        .video-image{
+            position: relative;
+            font-size: 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                min-height: 250px;
+            }
+            .button-video{
+                background: rgba(0, 0, 0, 0.50) !important;
+                border: 0;
+                border-radius: 100px;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                text-align: center;
+                font-family: $font__accent;
+                font-size: 0;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 0;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+                width: auto;
+                height: auto;
+                overflow: visible;
+                background: transparent;
+                padding: 0;
+                width: 60px;
+                height: 60px;
+                text-decoration: none;
+                transition: .3s ease all;
+                z-index:3;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    transform: translate(-50%,-50%) !important;
+                    width: 50% !important;
+                    height: 0;
+                    top:50%;
+                    left:60%;
+                    border-top: 15px solid rgba(0,0,0,0);
+                    border-bottom: 15px solid rgba(0,0,0,0);
+                    border-left: 25px solid $white;
+                    transition: all .2s ease-in;
+    
+                    @include breakpoint(small down){
+                        border-top: 10px solid rgba(0,0,0,0);
+                        border-bottom: 10px solid rgba(0,0,0,0);
+                        border-left: 17px solid $white;
+                        left:50%;
+                    }
+
+                }
+
+                &:hover{
+                    transition: .3s ease all;
+                    opacity: 0.6;
+                }
+            }
+        }
+        h2{
+            margin: 10px 0;
+            text-align: center;
+        }
+    }
+}
+
+.page__videos.style-1{
+    gap: 0 4%;
+    .single-video{
+        width: 48%;
+    }
+}
+
+.page__videos.style-2{
+    gap: 0 2%;
+    .single-video{
+        width: 32%;
+
+        h2{
+            font-size: 20px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; /* start showing ellipsis when 3rd line is reached */
+            white-space: pre-wrap; /* let the text wrap preserving spaces */
+            text-transform: inherit;
+        }
+    }
+}

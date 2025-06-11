@@ -43,7 +43,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['./sass/{components,home}/*.scss', '!./sass/*.scss'], gulp.series('styles'));
+  gulp.watch(['./sass/{components,home,pages}/*.scss', '!./sass/*.scss'], gulp.series('styles'));
   gulp.watch(['./scripts/*.js', './scripts/*.min.js'], gulp.series('scripts'));
 });
 

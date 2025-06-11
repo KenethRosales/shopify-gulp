@@ -1,3 +1,14 @@
+body.page{
+    #MainContent{
+        .page-width{
+            max-width: 1440px;
+            width: 70%;
+            h1{
+                margin: 0;
+            }
+        }
+    }
+}
 /* Music Slider */
 
 .music__section{
@@ -340,6 +351,28 @@
                         text-align: center;
                     }
                 }
+            }
+        }
+    }
+}
+
+/* Page Music */
+
+.page__music{
+    .music__release{
+        .music{
+            &__content{
+                h2{
+                    font-family: $font__accent;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    margin-bottom: 15px;
+                }
+                a{
+                    @include primary-button();
+                }
+                
             }
         }
     }
