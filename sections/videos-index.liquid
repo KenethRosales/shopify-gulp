@@ -21,87 +21,77 @@
 	{% if section.settings.videos_section_style == "style-3" %}
 		<div class="videos-list-featured">
 			{% for video in new_videos %}
-				<h2>{{ video.video_title }}</h2>
-				<p>
-					{% assign yt_id = video.video_yt_id %}
-					
-					{% capture thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-					{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %}  
-
-					{% comment %}
-					{{ thumb_video }}
-					{{ video_url }}
-					{% endcomment %}
-
-					
-					<a class="link-video" data-fancybox="video-gallery" href="{{ video_url }}">
-					<div class="overlay"></div>
-					<img class="thumb-video" src="{{ thumb_video }}" />
-					</a>
-					
-				</p>
+				{% if video.featured == true %}
+					{% assign i = i | plus:1 %}
+					{% if i <= 5 %}
+						{% assign yt_id = video.video_yt_id %}
+						{% assign thumb_video = video.thumbnail %}
+						{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
+						{% if thumb_video != blank %}
+							{% assign new_thumb_video = thumb_video | image_url %}
+						{% else %}
+							{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
+						{% endif %}
+						
+						<div class="single-video">
+							<div class="video-image">
+								<img class="thumb-video" src="{{ new_thumb_video }}" />
+								<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
+									Watch
+								</a>
+							</div>
+							<h2 class="title-video">{{ video.video_title }}</h2>
+						</div>
+					{% endif %}
+				{% endif %}
 			{% endfor %}
 		</div>
 		
 		<div class="videos-list">
 			{% for video in new_videos %}
-				<h2>{{ video.video_title }}</h2>
-				<p>
+				{% if video.featured == false or video.featured == Null %}
 					{% assign yt_id = video.video_yt_id %}
+					{% assign thumb_video = video.thumbnail %}
+					{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
+					{% if thumb_video != blank %}
+						{% assign new_thumb_video = thumb_video | image_url %}
+					{% else %}
+						{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
+					{% endif %}
 					
-					{% capture thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-					{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %}  
-
-					{% comment %}
-					{{ thumb_video }}
-					{{ video_url }}
-					{% endcomment %}
-
-					
-					<a class="link-video" data-fancybox="video-gallery" href="{{ video_url }}">
-					<div class="overlay"></div>
-					<img class="thumb-video" src="{{ thumb_video }}" />
-					</a>
-					
-				</p>
+					<div class="single-video">
+						<div class="video-image">
+							<img class="thumb-video" src="{{ new_thumb_video }}" />
+							<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
+								Watch
+							</a>
+						</div>
+						<h2 class="title-video">{{ video.video_title }}</h2>
+					</div>
+				{% endif %}
 			{% endfor %}
 		</div>
 
 	{% else %}
 		{% for video in new_videos %}
-			{% assign i = i | plus:1 %}
-			{% if i <= 5 %}
-				{% assign yt_id = video.video_yt_id %}
-				{% assign thumb_video = video.thumbnail %}
-
-				{% comment %}
-				{{video_thumb | image_url }}
-				{% endcomment %}
-				{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
-
-				{% if thumb_video != blank %}
-					{% assign new_thumb_video = thumb_video | image_url %}
-				{% else %}
-					{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
-				{% endif %}
-				
-				<div class="single-video">
-					<div class="overlay"></div>
-					<div class="video-image">
-						<img class="thumb-video" src="{{ new_thumb_video }}" />
-						<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
-							Watch
-						</a>
-					</div>
-					<h2 class="title-video">{{ video.video_title }}</h2>
-				</div>
-
-					{% comment %}
-					{{ thumb_video }}
-					{{ video_url }}
-					{% endcomment %}
-
+			{% assign yt_id = video.video_yt_id %}
+			{% assign thumb_video = video.thumbnail %}
+			{% capture video_url %}http://youtube.com/watch?v={{ yt_id }}{% endcapture %} 
+			{% if thumb_video != blank %}
+				{% assign new_thumb_video = thumb_video | image_url %}
+			{% else %}
+				{% capture new_thumb_video %}https://img.youtube.com/vi/{{ yt_id }}/maxresdefault.jpg{% endcapture %}
 			{% endif %}
+			
+			<div class="single-video">
+				<div class="video-image">
+					<img class="thumb-video" src="{{ new_thumb_video }}" />
+					<a class="button-video" data-fancybox="video-gallery" href="{{ video_url }}">
+						Watch
+					</a>
+				</div>
+				<h2 class="title-video">{{ video.video_title }}</h2>
+			</div>
 		{% endfor %}
 	{% endif %}
 </div>

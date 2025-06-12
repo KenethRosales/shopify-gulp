@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
 		slidesToScroll: 1,
 		speed: 300,
 		centerMode: true,
-		cssEase: "ease-in-out",
+		cssEase: "ease-in-out",	
 		useTransform: true,
 		dots: false,
 		fade: true,
