@@ -135,33 +135,10 @@
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
         <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-			{% if template.name == "index" %}
-                <h2 class="title-section">Tour</h2>
-                <div class="tour-table {{ section.settings.tour_section_style }}">
-                    <div id="seated-55fdf2c0" data-artist-id="749906c5-7342-44e4-81f3-77dc0604f172" data-css-version="3"></div><script src="https://widget.seated.com/app.js"></script>
-
-                    <div class="shows-body">
-						<script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
-						
-						<a class="bit-widget-initializer" data-artist-name="LL Cool J" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-date-format="MM DD YYYY" data-display-limit="100" data-display-start-time="false" data-display-lineup="false" data-display-play-my-city="false">
-						</a>
-						<div class="buttons-shows">
-							<div class="button-band">
-								<a class="button-primary" href="https://www.bandsintown.com/a/953-ll-cool-j?affil_code=js_localhost&amp;app_id=js_localhost&amp;came_from=242&amp;utm_campaign=artist&amp;utm_medium=web&amp;utm_source=widget">
-									Track this artist
-								</a>
-							</div>
-							<div class="button-band playmycity">
-								<a class="button-primary" href="https://www.bandsintown.com/a/953-ll-cool-j?affil_code=js_localhost&amp;app_id=js_localhost&amp;came_from=242&amp;utm_campaign=artist&amp;utm_medium=web&amp;utm_source=widget">
-									Play my city
-								</a>
-							</div>
-						</div>
-					</div>
-                </div>
-            {% else %}
-                {{ page.content }}
-            {% endif %}
+			<h2 class="title-section">Tour</h2>
+			<div class="tour-table {{ section.settings.tour_section_style }}">
+				{{ page.content }}
+			</div>
 		</div>
     </div>
   </div>
