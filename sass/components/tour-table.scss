@@ -1,3 +1,298 @@
+
+.tour-table.style-1{
+    .seated{
+        &-events-table{
+            .seated-event{
+                &-description-cells{
+                    width: 80%;
+                }
+                &-link-cells{
+                    width: 20%;
+                }
+                /* each row event */
+                &-date-cell{
+                    width: 100%;
+                }
+                &-venue-cell{
+                    width: 100%;
+
+                    .seated-event-venue-name, .seated-event-venue-location{
+                        width: 50%;
+                    }
+                }
+                &-venue-location{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .bit{
+        &-widget-container{
+            .bit{
+                &-details{
+                    width: 75%;
+    
+                    >div{
+                        width: 100%;
+                    }
+                    
+                    div.bit-titleWrapper{
+                        width: 50%;
+                        
+                    }
+                    .bit-location{
+                        width: 40%;
+                    }
+                }
+                &-details.bit-event-buttons{
+                    width: 25%;
+                    div{
+                        width:fit-content;
+    
+                    }
+                }
+            }
+        }
+    }  
+}
+
+
+
+.tour-table.style-2{
+    .seated{
+        &-events-table{
+            .seated-event{
+                &-description-cells{
+                    gap: 0 10px;
+                }
+                /* each row event */
+                &-date-cell{
+                    width: fit-content;
+                    min-width: 150px;
+                }
+                &-venue-cell{
+                    width: 75%;
+                }
+                &-link-cells{
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+    .bit{
+        &-widget-container{
+            .bit{
+                &-details{
+                    width: 75%;
+
+                    >div{
+                        width: fit-content;
+                        min-width: 140px;
+                    }
+                    
+                    div.bit-titleWrapper{
+                        width: 47%;
+                        
+                    }
+                    .bit-location{
+                        width: 30%;
+                    }
+                }
+                &-details.bit-event-buttons{
+                    margin: 0;
+                    width: 25%;
+                    div{
+                        width:fit-content;
+                        min-width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.tour-table.style-3{
+    .seated{
+        &-events-table{
+            display: flex;
+            flex-flow: row wrap ;
+            justify-content: space-between;
+            align-items: flex-start;
+            //gap: 10px;
+
+            .seated-event{
+                &-row{
+                    width: 48%;
+                    //padding: 0;
+                }
+                &-description-cells{
+                    gap: 0 10px;
+                }
+                /* each row event */
+                &-date-cell{
+                    width: 100%;
+                }
+                &-venue-cell{
+                    width: 100%;
+                    .seated-event-venue-name, .seated-event-venue-location{
+                        width: 100%;
+                    }
+                }
+                &-link-cells{
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+            .seated-follow-box{
+                width: 100%;
+            }
+            &:last-child{
+                width: 100%;
+            }
+        }
+    }
+    .bit{
+        &-widget-container{
+            .bit{
+                &-upcoming-events{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .bit-event{
+                        width: 48%;
+                    }
+                }
+                &-details{
+                    width: 70%;
+
+                    >div{
+                        width: 100%;
+                    }
+                    
+                    div.bit-titleWrapper{
+                        width: 100%;
+                        
+                    }
+                    .bit-location{
+                        width: 100%;
+                    }
+                }
+                &-details.bit-event-buttons{
+                    width: 30%;
+                    div{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width:100%;
+
+                        a{
+                            margin: 10px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.tour-table.style-4{
+    .seated{
+        &-events-table{
+            display: flex;
+            flex-flow: row wrap ;
+            justify-content: flex-start;
+            align-items: flex-start;
+            //gap: 10px;
+
+            .seated-event{
+                &-row{
+                    width: 33.3333%;
+                    //padding: 0;
+                }
+                &-description-cells{
+                    gap: 0 10px;
+                    width: 100%;
+                }
+                /* each row event */
+                &-date-cell{
+                    width: 100%;
+                }
+                &-venue-cell{
+                    width: 100%;
+                    .seated-event-venue-name, .seated-event-venue-location{
+                        width: 100%;
+                    }
+                }
+                &-link-cells{
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+            .seated-follow-box{
+                width: 100%;
+            }
+            &:last-child{
+                width: 100%;
+            }
+        }
+    }
+    .bit{
+        &-widget-container{
+            .bit{
+                &-upcoming-events{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    .bit-event{
+                        width: 33.3333%;
+                        gap: 0 !important;
+                    }
+                }
+                &-details{
+                    width: 100%;
+
+                    >div{
+                        width: 100%;
+                    }
+                    
+                    div.bit-titleWrapper{
+                        width: 100%;
+                        
+                    }
+                    .bit-location{
+                        width: 100%;
+                    }
+                }
+                &-details.bit-event-buttons{
+                    width: 100%;
+                    justify-content: flex-start !important;
+                    gap: 0 10px !important;
+                    div{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width:fit-content;
+
+                        a{
+                            margin: 10px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 .seated{
     &-events-table{
         border-top: 0 !important;
